@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            position: relative; /* Ensure positioning context */
+        }
+        #uaee-message {
+            position: absolute;
+            top: 10px; /* Adjust top position as needed */
+            right: 10px; /* Adjust right position as needed */
+            background-color: #f44336; /* Red background color */
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            z-index: 1; /* Ensure the message is above other content */
+        }
+        #logo {
+            position: absolute;
+            top: -100px; /* Raise the logo 100px above */
+            right: 10px; /* Adjust right position as needed */
+            width: 100px; /* Adjust width as needed */
+            z-index: 1; /* Ensure the logo is above other content */
+        }
+        #password-form {
+            max-width: 300px;
+            margin: 0 auto;
+            margin-top: 150px; /* Adjust margin-top as needed */
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="uaee-message">UAEE</div> <!-- Message at top-right corner -->
+    
+    <img id="logo" src="https://images-ext-1.discordapp.net/external/O_qZ2z6vKrdprjeuS5GPh9BCPrw8mW-TV4wZpyL4K6M/https/cdn.discordapp.com/app-icons/1193975067974058116/0877a35570a53830b623cc115ce588ea.png?format=webp&quality=lossless" alt="Logo">
+    
+    <div id="password-form">
+        <h2>Please enter the password to disable the page:</h2>
+        <input type="password" id="password" placeholder="Password">
+        <br><br>
+        <button onclick="checkPassword()">Confirm</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        // The correct password to disable the page
+        var correctPassword = "UAEE";
+
+        // Function to check the password
+        function checkPassword() {
+            var passwordEntered = document.getElementById("password").value.trim();
+
+            if (passwordEntered === correctPassword) {
+                // If the correct password is entered, disable the page
+                document.getElementById("result").textContent = "Page successfully disabled.";
+                // You can replace the next line with window.close() if you want to completely close the window.
+                document.body.innerHTML = "<h2>Page successfully disabled.</h2>";
+            } else {
+                // If the password is incorrect
+                document.getElementById("result").textContent = "Incorrect password. Please try again.";
+                // Redirect after 1 second if password is incorrect
+                setTimeout(function() {
+                    window.location.href = "https://3tabawk.github.io/HHHHHH//";
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>
